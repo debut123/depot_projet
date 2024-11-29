@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
-    Personne personne=new Personne(List.of(new String[]{""}),1,"Antoine","2 rue Paris");
-    personne.obtenirInfos();
+    //Personne personne=new Personne(List.of(new String[]{""}),1,"Antoine","2 rue Paris");
+    //personne.obtenirInfos();
     }
 }

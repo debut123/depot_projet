@@ -3,9 +3,9 @@ package fr.isep.francois;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Personne {
+public abstract class Personne {
 
-int identifiant;
+String identifiant;
 
 String nom;
 
@@ -13,7 +13,7 @@ String adresse;
 
 List<String> contact= new ArrayList<>();
 
-    public Personne(List<String> contact, int identifiant, String nom, String adresse) {
+    public Personne(List<String> contact, String identifiant, String nom, String adresse) {
         this.contact = contact;
         this.identifiant = identifiant;
         this.nom = nom;
@@ -27,5 +27,6 @@ List<String> contact= new ArrayList<>();
 
 
 }
+
 
 }
