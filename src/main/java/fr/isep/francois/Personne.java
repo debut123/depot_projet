@@ -20,13 +20,21 @@ List<String> contact= new ArrayList<>();
         this.adresse = adresse;
     }
 
-    public void obtenirInfos(){
+    abstract String Obtenirinfo();
 
-    System.out.println("Le nom est: "+nom+" Son adrresse: "+ adresse+
-            " Ses contacts sont: " +contact+ "son identifiant: "+identifiant);
+    public String getIdentifiant() {
+        return identifiant;
+    }
 
+    public String getNom() {
+        return nom;
+    }
 
-}
+    public String getAdresse() {
+        return adresse;
+    }
 
-
+    public List<String> getContact() {
+        return contact;
+    }
 }

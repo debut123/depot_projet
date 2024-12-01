@@ -8,17 +8,18 @@ String Licence;
 
 int heuresDevole;
 
-String role;
+String role="Pilote";
 
 public Pilote(List<String> contact, String identifiant, String nom, String adresse,
-              int numeroEmploye, String dateEmbauche,
-              String licence, int heuresDeVol, String role){
+              int NumeroEmploye, String dateEmbauche,
+              String licence, int heuresDeVol){
 
     super(contact,identifiant,nom,
-           adresse);
+           adresse,NumeroEmploye,dateEmbauche);
+
     this.Licence=Licence;
     this.heuresDevole=heuresDevole;
-    this.role="Pilote";
+
 
 
 }
@@ -41,6 +42,13 @@ public void AffecterVol(){
     public String ObtenirRole(){
 
         return role;
+
+    }
+
+    public String Obtenirinfo(){
+
+    return contact.toString()+identifiant.toString()+nom.toString()+adresse.toString()+
+            NumeroEmploye+DateEmboche.toString()+Licence.toString()+heuresDevole+role;
 
     }
 }

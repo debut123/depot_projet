@@ -9,13 +9,21 @@ public class Avion {
     String modèle;
     int capacité;
 
+
+
     List<PlageHoraire> calendrier;
 
-    public Avion(int immatriculation, String modèle, int capcité) {
+    public Avion(int immatriculation, String modèle, int capacité) {
         this.immatriculation = immatriculation;
         this.modèle = modèle;
-        this.capacité = capcité;
+        this.capacité = capacité;
     }
+    public Avion(){}
+
+    public int getCapacite() {
+        return capacité;
+    }
+
     // Classe interne pour représenter une plage horaire
     public static class PlageHoraire {
         int horaireDebut;  // Heure de début en format 24h (ex : 10 pour 10:00)
@@ -42,4 +50,7 @@ public class Avion {
 
 
 
+    public void setCapacité(int capacité) {
+        this.capacité = capacité;
+    }
 }

@@ -8,13 +8,14 @@ public abstract class Employe extends Personne{
     String DateEmboche;
 
     public Employe(List<String> contact, String identifiant, String nom,
-                   String adresse) {
+                   String adresse,int NumeroEmploye,String dateEmboche) {
         super(contact, identifiant, nom, adresse);
         this.NumeroEmploye=NumeroEmploye;
         this.DateEmboche=DateEmboche;
     }
 
     abstract String ObtenirRole();
+    abstract String Obtenirinfo();
 
 
 }

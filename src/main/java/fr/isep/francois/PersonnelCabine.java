@@ -8,8 +8,9 @@ String qualification;
 String role="personnels cabine";
 
     public PersonnelCabine(List<String> contact, String identifiant, String nom,
-                           String adresse, String qualification) {
-        super(contact, identifiant, nom, adresse);
+                           String adresse,int NumeroEmploye,String dateEmbauche,String qualification) {
+        super(contact,identifiant,nom,
+                adresse,NumeroEmploye,dateEmbauche);
         this.qualification = qualification;
     }
 
@@ -30,6 +31,12 @@ String role="personnels cabine";
     public String ObtenirRole(){
 
         return role;
+
+    }
+    public String Obtenirinfo(){
+
+        return contact.toString()+identifiant.toString()+nom.toString()+adresse.toString()+
+                NumeroEmploye+DateEmboche.toString()+qualification.toString()+role;
 
     }
 
