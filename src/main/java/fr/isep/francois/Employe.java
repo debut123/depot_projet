@@ -17,5 +17,19 @@ public abstract class Employe extends Personne{
     abstract String ObtenirRole();
     abstract String Obtenirinfo();
 
+    public int getNumeroEmploye() {
+        return NumeroEmploye;
+    }
 
+    public String getDateEmboche() {
+        return DateEmboche;
+    }
+
+    public void setNumeroEmploye(int numeroEmploye) {
+        NumeroEmploye = numeroEmploye;
+    }
+
+    public void setDateEmboche(String dateEmboche) {
+        DateEmboche = dateEmboche;
+    }
 }

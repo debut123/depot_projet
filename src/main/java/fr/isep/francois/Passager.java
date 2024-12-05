@@ -1,11 +1,13 @@
 package fr.isep.francois;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Passager extends Personne{
 
 String Passeport;
 String role="Passager";
+ArrayList<Passager> listepassager=new ArrayList<>();
 
     public Passager(List<String> contact, String identifiant, String nom, String adresse, String passeport) {
         super(contact, identifiant, nom, adresse);
@@ -29,4 +31,27 @@ public void annullerreservation(int numeroreservation){
 
     }
 
+    public String getPasseport() {
+        return Passeport;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public ArrayList<Passager> getListepassager() {
+        return listepassager;
+    }
+
+    public void setPasseport(String passeport) {
+        Passeport = passeport;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public void setListepassager(ArrayList<Passager> listepassager) {
+        this.listepassager = listepassager;
+    }
 }

@@ -56,4 +56,44 @@ public class Reservationdetail{
 
 
     }
+
+    public int getNumeroreservation() {
+        return numeroreservation;
+    }
+
+    public void setNumeroreservation(int numeroreservation) {
+        this.numeroreservation = numeroreservation;
+    }
+
+    public String getDateReservation() {
+        return dateReservation;
+    }
+
+    public void setDateReservation(String dateReservation) {
+        this.dateReservation = dateReservation;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public List<Integer> getListereservation() {
+        return listereservation;
+    }
+
+    public void setListereservation(List<Integer> listereservation) {
+        this.listereservation = listereservation;
+    }
+
+    public List<Reservationdetail> getListedetail() {
+        return listedetail;
+    }
+
+    public void setListedetail(List<Reservationdetail> listedetail) {
+        this.listedetail = listedetail;
+    }
 }
