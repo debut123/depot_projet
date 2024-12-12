@@ -46,7 +46,7 @@ public class Avion {
         return listeaviondisponible;
     }
 
-    List<PlageHoraire> calendrier;
+    List<PlageHoraire> calendrier=new ArrayList<>();;
     List<Avion> listeaviondisponible=new ArrayList<>();
 
     public Avion(int immatriculation, String modèle, int capacité) {

@@ -62,8 +62,8 @@ ArrayList<PersonnelCabine> listepersonnel=new ArrayList<>();
     }
     public String Obtenirinfo(){
 
-        return contact.toString()+identifiant.toString()+nom.toString()+adresse.toString()+
-                NumeroEmploye+DateEmboche.toString()+qualification.toString()+role;
+        return contact.toString()+identifiant+nom+adresse+
+                NumeroEmploye+DateEmboche+qualification+role;
 
     }
     public void obtenirVol(int numerroVol) {
@@ -87,21 +87,35 @@ ArrayList<PersonnelCabine> listepersonnel=new ArrayList<>();
 
     }
     public void AffecterVol(int numeroVol) {
-        // Créer un nouveau vol
+        // Créer un nouvel objet Vol
         Vol vol = new Vol();
 
-        // Créer un EnsembleVol pour ce vol
-        Vol.EnsembleVol ensembleVol = new Vol().new EnsembleVol(numeroVol, "Paris", "Lyon",
-                20241205, 20241205, "Prévu", null, null, new ArrayList<>(), new ArrayList<>());
+        // Vérifier si le vol existe déjà dans la liste des vols
+        Vol.EnsembleVol ensembleVolTrouve = null;
+        for (Vol.EnsembleVol ensembleVol : vol.listeEnsembleVol) {
+            if (ensembleVol.getNumerroVol() == numeroVol) {
+                ensembleVolTrouve = ensembleVol;
+                break;
+            }
+        }
 
-        // Affecter ce personnel de cabine au vol
-        ensembleVol.Listepersonnel.add(this);  // Le personnel de cabine actuel (this) est affecté à ce vol
-
-        // Ajouter ce vol à la liste des vols dans la classe Vol
-        vol.listeEnsembleVol.add(ensembleVol);
+        // Si le vol existe déjà, ajouter le personnel cabine à la liste des personnels
+        if (ensembleVolTrouve != null) {
+            ensembleVolTrouve.Listepersonnel.add(this);
+        } else {
+            // Sinon, créer un nouvel ensemble de vol pour ce vol et y ajouter le personnel cabine
+            Vol.EnsembleVol nouveauEnsembleVol = new Vol().new EnsembleVol(numeroVol, "Paris", "Lyon",
+                    20241205, 20241205, "Prévu",
+                    null, null, new ArrayList<>(),
+                    new ArrayList<>());
+            nouveauEnsembleVol.Listepersonnel.add(this);
+            // Ajouter ce nouvel ensemble de vol à la liste des vols du vol
+            vol.listeEnsembleVol.add(nouveauEnsembleVol);
+        }
 
         // Afficher une confirmation
         System.out.println("Le personnel de cabine " + this.nom + " a été affecté au vol " + numeroVol);
     }
+
 
 }

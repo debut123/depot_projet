@@ -6,12 +6,14 @@ import java.util.List;
 import java.util.Map;
 
 public class Vol {
+
+
     public Vol() {
     }
 
     Map<Vol,Avion> listevolavion=new HashMap<>();
 
-    List<EnsembleVol> listeEnsembleVol=new ArrayList<>();
+    public static List<EnsembleVol> listeEnsembleVol=new ArrayList<>();
 
 
     List<Vol> listevol= new ArrayList<>();
@@ -137,21 +139,11 @@ String Etat;
 
     }
 
-    public void annullerVol(int numerroVol) {
-
-
-        for (Vol.EnsembleVol ensembleVol : listeEnsembleVol) {
-
-            if (ensembleVol.getNumerroVol() == numerroVol) {
-
-                listeEnsembleVol.remove(ensembleVol);
-
-
-            }
-
-
-        }
+    public void annulerVol(int numeroVol) {
+        // Utilisation de removeIf pour supprimer le vol correspondant
+        listeEnsembleVol.removeIf(ensembleVol -> ensembleVol.getNumerroVol() == numeroVol);
     }
+
 
 
     public Map<Vol, Avion> getListevolavion() {
@@ -338,6 +330,7 @@ String Etat;
                 }
             }
             if (!volTrouve) {
+
                 System.out.println("Erreur : Vol " + numerroVol + " non trouvé pour modification.");
             }
         }

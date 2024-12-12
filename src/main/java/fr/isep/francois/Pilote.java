@@ -45,19 +45,14 @@ int heuresDevole;
 
 ArrayList<Pilote>listepilote=new ArrayList<>();
 
-public Pilote(List<String> contact, String identifiant, String nom, String adresse,
-              int NumeroEmploye, String dateEmbauche,
-              String licence, int heuresDeVol){
+    public Pilote(List<String> contact, String identifiant, String nom, String adresse,
+                  int NumeroEmploye, String dateEmbauche,
+                  String licence, int heuresDeVol){
 
-    super(contact,identifiant,nom,
-           adresse,NumeroEmploye,dateEmbauche);
-
-    this.Licence=Licence;
-    this.heuresDevole=heuresDevole;
-
-
-
-}
+        super(contact, identifiant, nom, adresse, NumeroEmploye, dateEmbauche); // Assurez-vous que DateEmboche est bien transmis
+        this.Licence = licence;
+        this.heuresDevole = heuresDeVol;
+    }
 
 
 
@@ -73,7 +68,7 @@ public Pilote(List<String> contact, String identifiant, String nom, String adres
     public String Obtenirinfo(){
 
     return contact.toString()+identifiant.toString()+nom.toString()+adresse.toString()+
-            NumeroEmploye+DateEmboche.toString()+Licence.toString()+heuresDevole+role;
+            NumeroEmploye+DateEmboche+Licence+heuresDevole+role;
 
     }
     public void obtenirVol(int numerroVol){

@@ -6,7 +6,14 @@ public class Aeroport {
 
 String nom;
 
-String ville;
+    public Aeroport(String nom, String ville, String description, ArrayList<Aeroport> listeaeroport) {
+        this.nom = nom;
+        this.ville = ville;
+        this.description = description;
+        this.listeaeroport = listeaeroport;
+    }
+
+    String ville;
 
 String description;
 
