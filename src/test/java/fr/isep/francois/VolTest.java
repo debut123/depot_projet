@@ -87,7 +87,7 @@ public class VolTest {
         vol.modifierVol(123, "Paris", "Marseille", 20241206, 20241206, "Modifié", avion, pilote, passagers, personnels, true, false);
 
         // Vérifier que les informations du vol ont été modifiées
-        assertNotEquals("Marseille", vol.getListeEnsembleVol().get(0).getDestination(), "La destination n'a pas été correctement modifiée.");
+        assertEquals("Marseille", vol.getListeEnsembleVol().get(1).getDestination(), "La destination n'a pas été correctement modifiée.");
     }
 
     @Test
@@ -100,6 +100,6 @@ public class VolTest {
 
         // Vérifier que le passager a bien été ajouté à la liste
         assertEquals(1, passagersDuVol.size(), "Le passager n'a pas été trouvé pour ce vol.");
-        assertNotEquals("Jane Doe", passagersDuVol.get(0).getNom(), "Le nom du passager n'est pas correct.");
+        assertEquals("Doe", passagersDuVol.get(0).getNom(), "Le nom du passager n'est pas correct.");
     }
 }
